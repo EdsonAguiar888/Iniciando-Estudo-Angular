@@ -53,4 +53,35 @@
 </ul>
 
 
+
+
+
+
+<h3>🔋 Monitoramento de Estações de Recarga em Tempo Real:</h3>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+    
+    @for (estacao of estacoesDeRecarga; track estacao.id) {
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; width: 280px; text-align: left; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-top: 5px solid #06b6d4;">
+        <h4 style="margin: 0 0 10px 0; color: #1e293b;">{{ estacao.nome }}</h4>
+        <p style="margin: 5px 0; font-size: 14px; color: #64748b;">Potência: <strong>{{ estacao.potencia }}</strong></p>
+        
+        <!-- Condicional para mudar a cor do selo de status -->
+        <p style="margin: 10px 0 0 0; font-size: 14px;">
+          Status: 
+          @if (estacao.status === 'Disponível') {
+            <span style="background-color: #d1fae5; color: #065f46; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: bold;">
+              {{ estacao.status }}
+            </span>
+          } @else {
+            <span style="background-color: #fee2e2; color: #991b1b; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: bold;">
+              {{ estacao.status }}
+            </span>
+          }
+        </p>
+      </div>
+    } @empty {
+      <p style="color: #64748b;">Carregando mapa de pontos de recarga...</p>
+    }
+
 </div>

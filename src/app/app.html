@@ -1,12 +1,16 @@
 
 <!-- <app-navbar></app-navbar> -->
-<app-navbar [usuarioLogado]="desenvolvedor"></app-navbar>
+<app-navbar 
+  [usuarioLogado]="desenvolvedor"
+  (onTrocarUsuario)="mudarNome()">
+
+</app-navbar>
 
 
 
 <div style="text-align: center; margin-top: 50px; font-family: sans-serif;">
   <h1>領 Projeto: {{ title }} 🚀</h1>
-  
+
   <p>Desenvolvedor principal: <strong>{{ desenvolvedor }}</strong></p>
 
 

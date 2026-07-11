@@ -27,6 +27,10 @@ export class App {
       this.numeroContador--;
     }
   }
+  
+  mudarNome() {
+    this.desenvolvedor = this.desenvolvedor === 'HP' ? 'Desenvolvedor Sênior' : 'HP';
+  }
 
   // Sua lista de rotas ou locais do projeto
   locaisDoPorto = [
